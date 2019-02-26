@@ -20,7 +20,7 @@ class TestBaiDu(unittest.TestCase):
 
     locator_kw = (By.ID,'kw')
     locator_su = (By.ID,'su')
-    locator_result = (By.XPATH,'//*[@id="container"]/div[2]/div/div[2]/span')
+    locator_result = (By.XPATH, '//*[@id="container"]/div[2]/div/div[2]/span')
 
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path=DRIVER_PATH + '\chromedriver.exe')
