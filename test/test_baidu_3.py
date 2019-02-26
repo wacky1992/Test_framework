@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from utils.config import Config,DRIVER_PATH
 from utils.log import logger
 
+
 class TestBaiDu(unittest.TestCase):
     URL = Config().get('URL')
     locator_kw = (By.ID, 'kw')

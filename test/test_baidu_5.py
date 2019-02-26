@@ -13,6 +13,7 @@ def time_format():
     current_time = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
     return current_time
 
+
 class TestBaiDu(unittest.TestCase):
     URL = Config().get('URL')
     excel = DATA_PATH + '/baidu.xlsx'
@@ -20,7 +21,6 @@ class TestBaiDu(unittest.TestCase):
     locator_kw = (By.ID,'kw')
     locator_su = (By.ID,'su')
     locator_result = (By.XPATH,'//*[@id="container"]/div[2]/div/div[2]/span')
-
 
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path=DRIVER_PATH + '\chromedriver.exe')
@@ -39,6 +39,7 @@ class TestBaiDu(unittest.TestCase):
         logger.info("查询成功")
         self.driver.get_screenshot_as_file(PIC_PATH + "\\" + time_format() + ".png")
         self.sub_tearDown()
+
 
 if __name__ == '__main__':
     report = REPORT_PATH + '\\report.html'

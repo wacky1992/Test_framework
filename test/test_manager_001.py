@@ -14,6 +14,7 @@ def time_format():
     current_time = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
     return current_time
 
+
 class TestManager(unittest.TestCase):
     URL = Config().get('URL')
     '''数据分析模块'''
@@ -38,10 +39,6 @@ class TestManager(unittest.TestCase):
     locator_report_009 = (By.ID,'255')
     '''虚拟身份上线'''
     locator_report_010 = (By.ID,'254')
-
-
-
-
 
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path=DRIVER_PATH + '\chromedriver.exe')
@@ -80,7 +77,6 @@ class TestManager(unittest.TestCase):
             logger.info(link.text)
         self.driver.get_screenshot_as_file(PIC_PATH + "\\" +  "设备日明细" + time_format() + ".png")
         self.sub_tearDown()
-
 
     def test_select_3(self):
         self.driver.find_element(*self.locator_data_analysis).click()
@@ -153,12 +149,8 @@ class TestManager(unittest.TestCase):
         self.sub_tearDown()
 
 
-
-
-
-
 if __name__ == '__main__':
     report = REPORT_PATH + '\\report.html'
     with open(report, 'wb') as f:
         runner = HTMLTestRunner(f, verbosity=2, title='从0搭建测试框架 测试', description='修改html报告')
-        runner.run(TestBaiDu('test_search_0'))
+        runner.run(TestManager('test_search_0'))

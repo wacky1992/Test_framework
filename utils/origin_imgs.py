@@ -3,7 +3,7 @@ from urllib.request import urlretrieve
 import os
 from utils.config import Config,ORIGIN_IMGS_PATH
 
-#下载验证码图片
+# 下载验证码图片
 url = 'http://www.moguproxy.com/proxy/validateCode/createCode?time={}'
 path = ORIGIN_IMGS_PATH + '/'
 

@@ -35,5 +35,6 @@ class TestBaiDu(unittest.TestCase):
         for link in links:
             print(link.text)
 
+
 if __name__ == '__main__':
     unittest.main()

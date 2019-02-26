@@ -35,5 +35,6 @@ class TestBaiDu(unittest.TestCase):
                     logger.info(link.text)
                 self.sub_tearDown()
 
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

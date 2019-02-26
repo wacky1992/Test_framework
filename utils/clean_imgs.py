@@ -2,17 +2,16 @@ from PIL import Image
 import os
 from utils.config import Config,CLEAN_IMGS_PATH,ORIGIN_IMGS_PATH
 
-#图片处理存放地址
+# 图片处理存放地址
 origin_path = ORIGIN_IMGS_PATH + '/'
 new_path = CLEAN_IMGS_PATH + '/'
 
-#提取图片中的字样
+# 提取图片中的字样
 for image in os.listdir(origin_path)[:200]:
     im = Image.open(origin_path + image)
     width, height = im.size
 
-
-    #获取图片中的颜色，返回列表
+    # 获取图片中的颜色，返回列表
     color_info = im.getcolors(width*height)
     # 按照计数从大到小排列颜色，那么颜色计数最多的应该是背景，接下来排名2到6的则对应5个字符
     sort_color = sorted(color_info, key=lambda x: x[0], reverse=True)

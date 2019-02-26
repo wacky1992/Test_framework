@@ -16,7 +16,6 @@ class TestManager(unittest.TestCase):
     URL = Config().get('URL')
     excel = DATA_PATH + '/baidu.xlsx'
 
-
     locator_1 = (By.ID,'loginType')
     locator_2 = (By.XPATH,'//*[@id="loginType"]/option[2]')
     locator_3 = (By.ID,'userId')
@@ -24,7 +23,6 @@ class TestManager(unittest.TestCase):
     locator_5 = (By.ID,'pictureRand')
     locator_6 = (By.ID,'code_img')
     locator_7 = (By.NAME,'button')
-
 
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path=DRIVER_PATH + '\chromedriver.exe')
