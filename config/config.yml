@@ -1,4 +1,5 @@
 URL: http://www.baidu.com
+RetingURL: https://azb.yzctid.com/renting/#/login
 log:
     file_name: test.log
     backup: 5
