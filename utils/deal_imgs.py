@@ -1,15 +1,31 @@
+from selenium import webdriver
+import os
+from utils.config import PIC_PATH, Config
+from PIL import Image
+import pytesseract
 
-def get_crop_imgs(img):
-    """
-    按照图片的特点,进行切割,这个要根据具体的验证码来进行工作. # 见原理图
-    :param img:
-    :return:
-    """
-    child_img_list = []
-    for i in range(4):
-        x = 2 + i * (6 + 4)  # 见原理图
-        y = 0
-        child_img = img.crop((x, y, x + 6, y + 10))
-        child_img_list.append(child_img)
 
-    return child_img_list
+def deal_pic():
+        URL = Config().get('RetingURL')
+        base_path = os.path.dirname(os.path.abspath(__file__)) + '\..'
+        driver_path = os.path.abspath(base_path + '\drivers\chromedriver.exe')
+        driver = webdriver.Chrome(executable_path=driver_path)
+        driver.get(URL)
+        driver.maximize_window()
+        pic = driver.find_element_by_xpath('//*[@id="app"]/div/div/div[2]/ul/li[4]/div/img')
+        driver.get_screenshot_as_file(PIC_PATH + "\\" + "001.png")
+        x = pic.location['x']
+        y = pic.location['y']
+        left = pic.size['width'] + x
+        right = pic.size['height'] + y
+        im = Image.open(PIC_PATH + "\\" + "001.png")
+        img = im.crop((x, y, left, right))
+        img.save(PIC_PATH + "\\" + "001-1.png")
+        img_pic = Image.open(PIC_PATH + "\\" + "001-1.png")
+        imgry = img_pic.convert('L')  # 转灰度
+        vcode = pytesseract.image_to_string(imgry)
+        return vcode
+
+
+
+

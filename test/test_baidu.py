@@ -1,5 +1,5 @@
 import os
-import  time
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -12,7 +12,7 @@ def time_format():
 URL = "http://www.baidu.com"
 base_path = os.path.dirname(os.path.abspath(__file__)) + '\..'
 driver_path = os.path.abspath(base_path+'\drivers\chromedriver.exe')
-pic_path = os.path.join(base_path,'pic')
+pic_path = os.path.join(base_path, 'pic')
 
 
 locator_kw = (By.ID,'kw')
