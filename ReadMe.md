@@ -5,6 +5,31 @@ v0.1版本使用说明：
 
 
 
+目录以及函数说明：
+|-framework                 根目录
+  |-config/                 配置文件
+    |-config.yml            日志、网址等配置信息文件
+  |-data/                   导入数据内容
+    |-***.xlsx              输入参数
+  |-driver/                 浏览器启动器
+    |-chromedriver.exe
+  |-log/                    日志文件
+  |-pic/                    保存验证码图片
+  |-report/                 报告文件
+    |-***.html
+  |-test/                   测试用例套
+    |-test_***.py
+  |-utils/                  项目主函数
+    |-config.py             路径配置
+    |-file_reader.py        文件提取处理
+    |-HTMLTestRunner.py     测试报告模板
+    |-log.py                日志配置
+    |-deal_imgs.py          处理验证码
+
+
+
+
+
 
 备注：windows下，直接在user目录中创建一个pip目录，如：C:\Users\xx\pip，新建文件pip.ini
 文件内容：
