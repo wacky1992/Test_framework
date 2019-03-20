@@ -9,7 +9,7 @@ from PIL import Image
 import pytesseract
 
 
-class TestBaiDu(unittest.TestCase):
+class TestRenting(unittest.TestCase):
     URL = Config().get('RetingURL')
     locator_username = (By.XPATH, '/html/body/div/div/div/div[2]/ul/li[2]/p/input')
     locator_password = (By.XPATH, '/html/body/div/div/div/div[2]/ul/li[3]/p/input')
@@ -61,11 +61,11 @@ class TestBaiDu(unittest.TestCase):
             # links = self.driver.find_elements(*self.locator_result)
             # for link in links:
             logger.info('成功')
-            self.sub_tearDown()
 
 
 if __name__ == '__main__':
     report = REPORT_PATH + '\\report.html'
+    st = unittest.TestCase()
     with open(report, 'wb') as f:
         runner = HTMLTestRunner(f, verbosity=2, title='从0搭建测试框架 测试', description='修改html报告')
-        runner.run(TestBaiDu('test_search_0'))
+        runner.run(st)

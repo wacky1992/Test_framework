@@ -38,7 +38,6 @@ class TestBaiDu(unittest.TestCase):
             logger.info(link.text)
         logger.info("查询成功")
         self.driver.get_screenshot_as_file(PIC_PATH + "\\" + time_format() + ".png")
-        self.sub_tearDown()
 
 
 if __name__ == '__main__':
