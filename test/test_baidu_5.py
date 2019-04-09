@@ -18,8 +18,8 @@ class TestBaiDu(unittest.TestCase):
     URL = Config().get('URL')
     excel = DATA_PATH + '/baidu.xlsx'
 
-    locator_kw = (By.ID,'kw')
-    locator_su = (By.ID,'su')
+    locator_kw = (By.ID, 'kw')
+    locator_su = (By.ID, 'su')
     locator_result = (By.XPATH, '//*[@id="container"]/div[2]/div/div[2]/span')
 
     def setUp(self):
