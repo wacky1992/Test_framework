@@ -10,6 +10,7 @@ REPORT_PATH = os.path.join(BASE_PATH, 'report')
 PIC_PATH = os.path.join(BASE_PATH, 'pic')
 ORIGIN_IMGS_PATH = os.path.join(BASE_PATH, 'origin_imgs')
 CLEAN_IMGS_PATH = os.path.join(BASE_PATH, 'clean_imgs')
+TEST_PATH = os.path.join(BASE_PATH, 'test')
 
 
 class Config:
